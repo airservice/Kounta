@@ -34,7 +34,7 @@ module Kounta
       end
 
       def get_access_token(access_code)
-        @token = @client.auth_code.get_token(access_code, redirect_uri: @redirect_uri)
+        @token = @client.auth_code.get_token(access_code)
         @access_token = @token.token
         @expires_at = @token.expires_at
         @refresh_token = @token.refresh_token
